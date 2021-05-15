@@ -33,6 +33,9 @@ module.exports = {
       updated_at : {
         type: Sequelize.DATE,
         allowNull: false
+      },
+      finished_at : {
+        type: Sequelize.DATE
       }
     })
   },
