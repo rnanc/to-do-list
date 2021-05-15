@@ -14,12 +14,8 @@ module.exports = {
   },
 
   async editProject(req, res) {
-    const  { id ,name }  = req.body
+    const  { id, name }  = req.body
     
-    let user_id = req.user.id
-    
-    user_id = parseInt(user_id)
-
     const project = await Project.update({ name }, { where: { id }, returning: true })
 
     return res.json(project)
@@ -30,7 +26,7 @@ module.exports = {
     
     user_id = parseInt(user_id)
 
-    const projects = await Project.findAll({where: {user_id}})
+    const projects = await Project.findAll({ where: { user_id } })
 
     return res.json(projects)
   },
